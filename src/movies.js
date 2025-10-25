@@ -17,25 +17,38 @@ function scoresAverage(moviesArray) {
         return 0;
     } else{
         const totalScore = moviesArray.reduce((score, movie) => {
-            if (movie.score === undefined || movie.score === ""){
+            if (movie.score === undefined || movie.score === "") {
                 score += 0;
                 return score;
-            } else{
+            } else {
                 score += movie.score;
                 return score;
             }
         }, 0);
-        console.log("Total score: ", totalScore);
-        
-        const avgScore = totalScore / moviesArray.length
-        console.log("Avg score: ", Number(avgScore.toFixed(2)));
-        
+        const avgScore = totalScore / moviesArray.length        
         return Number(avgScore.toFixed(2));
     }
 }
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
-function dramaMoviesScore(moviesArray) {}
+function dramaMoviesScore(moviesArray) {
+    const dramas = moviesArray.filter((movie) => movie.genre.includes("Drama"));
+    if (dramas.length === 0) {
+        return 0;
+    } else{
+        const score = dramas.reduce((score, drama) => {
+            if (drama.score === undefined || drama.score === ""){
+                score += 0;
+                return score;
+            } else {
+                score += drama.score;
+                return score;
+            }
+        }, 0);
+        const result = score / dramas.length
+        return Number(result.toFixed(2));
+    }
+}
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
 function orderByYear(moviesArray) {}
