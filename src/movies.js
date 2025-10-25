@@ -5,6 +5,21 @@ function getAllDirectors(moviesArray) {
     return moviesArray.map((movie) => movie.director);
 
 }
+// La función comentada contiene la Iteration 1.1 implementada
+// function getAllDirectors(moviesArray) {
+//     let previousDirector = "";
+//     const cleanedArray = moviesArray
+//         .map((movie) => movie.director)
+//         .filter((director) => {
+//             if(previousDirector === "" || previousDirector === director){
+//                 previousDirector = director;
+//                 return false;
+//             } 
+//         });
+
+//     return cleanedArray;
+
+// }
 
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
 function howManyMovies(moviesArray) {
